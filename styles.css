@@ -58,15 +58,9 @@
 
 }
 
-.a {
-    color: hotpink;
-    background-color: yellow;
-    font-weight: bold;
-}
-
 .weatherInfo {
+    position: fixed;
     background-color: aliceblue;
-
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 20px;
     font-weight: 100;
@@ -74,7 +68,18 @@
     color: black;
     margin-top: 20px;
     width: 50%;
+    height: 15%;
     left: 50%;
-    top: 10%;
+    top: 15%;
     transform: translate(-50%, -50%);
+    border-radius: 20px;
+    border: 0.3vw solid lightgrey;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
+
+.a {
+    color: hotpink;
+    background-color: yellow;
+    font-weight: bold;
+}
+
