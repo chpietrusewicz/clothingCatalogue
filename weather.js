@@ -4,7 +4,7 @@ const CITY = "Worcester";
 fetch(`https://api.openweathermap.org/data/2.5/weather?q=${CITY}&appid=${API_KEY}&units=imperial`)
     .then(response => response.json())
     .then(data => {
-        const TEMP = data.main.temp;
+        const TEMP = Math.round(Number(data.main.temp));
         const WEATHER = data.weather[0].description;
         const weatherDiv = document.getElementById('weatherDiv');
         weatherDiv.innerHTML = `<p>The current temperature in ${CITY} is ${TEMP}°F with ${WEATHER}.</p>`;
