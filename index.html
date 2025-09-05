@@ -3,94 +3,8 @@
 
 <head>
     <title>Clothing Catalogue</title>
-    <style>
-        .image-button {
-            background: none;
-            border: none;
-            padding: 0;
-            margin: 4px 2px;
-            cursor: pointer;
-            
-        }
-        /* Modal styles */
-        .modal {
-            display: none; /* Hidden by default */
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-        }
-        .modal-content {
-            background-color: #fff;
-            margin: 10% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 300px;
-            text-align: center;
-            border-radius: 8px;
-        }
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        .close:hover {
-            color: #000;
-        }
-        .text {
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-size: 40px;
-            font-weight: 100;
-            font-style: italic;
-            color: black;
-        }
-        .choiceButton {
-            background-color: #ccf2fc;
-            border: 0.25vw solid lightgray;
-            width: 13vw;
-            height: 7vw;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 30px;
-            bottom: 7%;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-size: 30px;
-            font-weight: 100;
-            font-style: italic;
-            color: black;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            transform: translate(-50%, -50%);
-            position: fixed;
-            cursor: pointer;
-        }
-        .choiceButton:hover {
-            background-color: #b3ecff;
-            transition-duration: 0.3s;
-        }
-        .centerDiv {
-            background-color: aliceblue;
-            width: 50vw;
-            height: 20vw;
-            position: fixed;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 20px;
-            border: 0.3vw solid lightgrey;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    <link rel="stylesheet" href="styles.css">
 
-        }
-    </style>
 </head>
 
 <body>
@@ -98,20 +12,22 @@
     <h1 style="color:slateblue;">Clothing Catalogue</h1>
 
     <!--Center Div-->
-    <div class="centerDiv"> 
-        <h1 class="text" style="position: fixed; width: 100%; text-align: center; left: 50%; top: 15%; transform: translate(-50%, -50%);">What are you looking for today?</h1>
+    <div class="centerDiv">
+        <h1 class="text"
+            style="position: fixed; width: 100%; text-align: center; left: 50%; top: 15%; transform: translate(-50%, -50%);">
+            What are you looking for today?</h1>
 
         <!--Buttons For Clothing Choices-->
         <input type="button" class="choiceButton" value="Formal" style="left: 50%;">
         <input type="button" class="choiceButton" value="Casual" style="left: 20%;">
-        <input type="button" class="choiceButton" value="Athletic" style="left: 80%;">    
+        <input type="button" class="choiceButton" value="Athletic" style="left: 80%;">
 
     </div>
 
 
-    
 
-    
+
+
     <!--Button For Closet-->
     <button class="image-button" id="closetBtn" style="position: absolute; top: 0; right: 0;">
         <img src="images/closetImage.png" alt="Button Image" style="height:80px; width:80px;">
@@ -132,17 +48,17 @@
         const closeModal = document.getElementById('closeModal');
 
         // Show modal on button click
-        closetBtn.onclick = function() {
+        closetBtn.onclick = function () {
             closetModal.style.display = "block";
         }
 
         // Hide modal on close click
-        closeModal.onclick = function() {
+        closeModal.onclick = function () {
             closetModal.style.display = "none";
         }
 
         // Hide modal when clicking outside modal content
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             if (event.target == closetModal) {
                 closetModal.style.display = "none";
             }
