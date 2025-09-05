@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>eeeeeeeeee</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        a {
+            color: hotpink;
+            background-color: yellow;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!--Title-->
+    <h1 style="color:slateblue;">Clothing Catalogue</h1>
+
+    <!--Center Div-->
+    <div class="centerDiv">
+        <h1 class="text"
+            style="position: fixed; width: 100%; text-align: center; left: 50%; top: 15%; transform: translate(-50%, -50%);">
+            What are you looking for today?</h1>
+
+        <!--Buttons For Clothing Choices-->
+        <input type="button" class="choiceButton" value="Formal" style="left: 50%;">
+        <input type="button" class="choiceButton" value="Casual" style="left: 20%;">
+        <input type="button" class="choiceButton" value="Athletic" style="left: 80%;">
+
+    </div>
+
+
+
+
+
+    <!--Button For Closet-->
+    <button class="image-button" id="closetBtn" style="position: absolute; top: 0; right: 0;">
+        <img src="images/closetImage.png" alt="Button Image" style="height:80px; width:80px;">
+    </button>
+
+    <script>
+        // Get elements
+        const closetBtn = document.getElementById('closetBtn');
+        const closetModal = document.getElementById('closetModal');
+        const closeModal = document.getElementById('closeModal');
+
+        // Show modal on button click
+        closetBtn.onclick = function () {
+            closetModal.style.display = "block";
+        }
+
+        // Hide modal on close click
+        closeModal.onclick = function () {
+            closetModal.style.display = "none";
+        }
+
+        // Hide modal when clicking outside modal content
+        window.onclick = function (event) {
+            if (event.target == closetModal) {
+                closetModal.style.display = "none";
+            }
+        }
+    </script>
+
+    <p><a href="closet.html" target=closet.html>This is a link</a></p>
+
+</body>
+
+</html>
