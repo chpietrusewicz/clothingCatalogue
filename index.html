@@ -10,6 +10,7 @@
             padding: 0;
             margin: 4px 2px;
             cursor: pointer;
+            
         }
         /* Modal styles */
         .modal {
@@ -42,16 +43,80 @@
         .close:hover {
             color: #000;
         }
+        .text {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 40px;
+            font-weight: 100;
+            font-style: italic;
+            color: black;
+        }
+        .choiceButton {
+            background-color: #ccf2fc;
+            border: 0.25vw solid lightgray;
+            width: 13vw;
+            height: 7vw;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 30px;
+            bottom: 7%;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 30px;
+            font-weight: 100;
+            font-style: italic;
+            color: black;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transform: translate(-50%, -50%);
+            position: fixed;
+            cursor: pointer;
+        }
+        .choiceButton:hover {
+            background-color: #b3ecff;
+            transition-duration: 0.3s;
+        }
+        .centerDiv {
+            background-color: aliceblue;
+            width: 50vw;
+            height: 20vw;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 20px;
+            border: 0.3vw solid lightgrey;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+        }
     </style>
 </head>
 
 <body>
     <!--Title-->
     <h1 style="color:slateblue;">Clothing Catalogue</h1>
+
+    <!--Center Div-->
+    <div class="centerDiv"> 
+        <h1 class="text" style="position: fixed; width: 100%; text-align: center; left: 50%; top: 15%; transform: translate(-50%, -50%);">What are you looking for today?</h1>
+
+        <!--Buttons For Clothing Choices-->
+        <input type="button" class="choiceButton" value="Formal" style="left: 50%;">
+        <input type="button" class="choiceButton" value="Casual" style="left: 20%;">
+        <input type="button" class="choiceButton" value="Athletic" style="left: 80%;">    
+
+    </div>
+
+
+    
+
+    
     <!--Button For Closet-->
     <button class="image-button" id="closetBtn" style="position: absolute; top: 0; right: 0;">
         <img src="images/closetImage.png" alt="Button Image" style="height:80px; width:80px;">
     </button>
+
     <!-- The Modal -->
     <div id="closetModal" class="modal">
         <div class="modal-content">
@@ -83,6 +148,7 @@
             }
         }
     </script>
+
 </body>
 
 </html>
