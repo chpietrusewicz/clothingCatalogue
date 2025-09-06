@@ -21,12 +21,24 @@
     </style>
 </head>
 <body>
-    <!-- Back Arrow Button -->
-    <button class="back-arrow" onclick="window.location.href='index.html';" aria-label="Back to Home">
-        <svg class="arrow-svg" viewBox="0 0 24 24" fill="none" stroke="slateblue" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="15 18 9 12 15 6"/>
-        </svg>
-    </button>
+    <!-- Slider with Tabs -->
+    <div class="slider">
+        <!-- Back Arrow Button INSIDE the slider -->
+        <button class="back-arrow" onclick="window.location.href='index.html';" aria-label="Back to Home" style="position: static; margin: 16px auto 24px auto; display: block;">
+            <svg class="arrow-svg" viewBox="0 0 24 24" fill="none" stroke="slateblue" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"/>
+            </svg>
+        </button>
+        <button class="slider-tab active" onclick="selectTab(this)">All</button>
+        <button class="slider-tab" onclick="selectTab(this)">Tees</button>
+        <button class="slider-tab" onclick="selectTab(this)">Long Sleeve</button>
+        <button class="slider-tab" onclick="selectTab(this)">Hoodies</button>
+        <button class="slider-tab" onclick="selectTab(this)">Jackets</button>
+        <button class="slider-tab" onclick="selectTab(this)">Shorts</button>
+        <button class="slider-tab" onclick="selectTab(this)">Pants</button>
+        <button class="slider-tab" onclick="selectTab(this)">Shoes</button>
+        <!-- Add more tabs as needed -->
+    </div>
     <!-- Plus Button in Top Right -->
     <div class="plus-container">
         <div class="plus-label">New Clothing Item</div>
@@ -37,5 +49,13 @@
             </svg>
         </button>
     </div>
+    <script>
+        //Tab highlighting 
+        function selectTab(tab) {
+            document.querySelectorAll('.slider-tab').forEach(btn => btn.classList.remove('active'));
+            tab.classList.add('active');
+            //more for more tabs
+        }
+    </script>
 </body>
 </html>
