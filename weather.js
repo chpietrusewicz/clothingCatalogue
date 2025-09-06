@@ -8,9 +8,9 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=${CITY}&appid=${API_KEY
     .then(response => response.json())
     .then(data => {
         TEMP = Math.round(Number(data.main.temp));
-        WEATHER = data.weather[0].description;
+        WEATHER = capitalizeFirstLetter(data.weather[0].description);
         const weatherDiv = document.getElementById('weatherDiv');
-        weatherDiv.innerHTML = `<p>The current temperature in ${CITY} is ${TEMP}°F with ${WEATHER}.</p>`;
+        weatherDiv.innerHTML = `<h1>${TEMP}°F</h1><p>${WEATHER}</p>`;
     }
 )
     .catch(error => console.error('Error fetching weather data:', error));
