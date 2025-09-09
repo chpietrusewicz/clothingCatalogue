@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Closet</title>
     <link rel="stylesheet" href="styles.css">
@@ -14,28 +15,46 @@
             cursor: pointer;
             padding: 0;
         }
+
         .arrow-svg {
             width: 40px;
             height: 40px;
         }
     </style>
 </head>
+
 <body>
     <!-- Back Arrow Button -->
     <button class="back-arrow" onclick="window.location.href='index.html';" aria-label="Back to Home">
-        <svg class="arrow-svg" viewBox="0 0 24 24" fill="none" stroke="slateblue" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="15 18 9 12 15 6"/>
+        <svg class="arrow-svg" viewBox="0 0 24 24" fill="none" stroke="slateblue" stroke-width="3"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6" />
         </svg>
     </button>
     <!-- Plus Button in Top Right -->
     <div class="plus-container">
         <div class="plus-label">New Clothing Item</div>
-        <button class="plus-button" aria-label="Add New">
-            <svg class="plus-svg" viewBox="0 0 48 48" fill="none" stroke="slateblue" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="24" y1="10" x2="24" y2="38"/>
-                <line x1="10" y1="24" x2="38" y2="24"/>
+        <button class="plus-button" aria-label="Add New" onclick="openPopup()">
+            <svg class="plus-svg" viewBox="0 0 48 48" fill="none" stroke="slateblue" stroke-width="4"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="24" y1="10" x2="24" y2="38" />
+                <line x1="10" y1="24" x2="38" y2="24" />
             </svg>
         </button>
     </div>
+
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-content" id="popupContent">
+            <button class="close-button" onclick="closePopup()" aria-label="Close Popup">&times;</button>
+            <input type="file" id="avatar" name="avatar" accept="image/*" />
+            <img id="output"/>
+        </div>
+
+    </div>
+
+    <script src="functions.js"></script>
+    <script src="addClothing.js"></script>
+
 </body>
+
 </html>

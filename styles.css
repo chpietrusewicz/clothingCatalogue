@@ -116,3 +116,18 @@
     width: 56px;
     height: 56px;
 }
+
+.popup-overlay {
+    display: none;
+    background-color: aliceblue;
+    width: 40%;
+    height: 80%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    border: 0.3vw solid lightgrey;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
