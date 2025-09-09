@@ -130,6 +130,49 @@
     border-radius: 20px;
     border: 0.3vw solid lightgrey;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.add-button {
+    background-color: #ccf2fc;
+    border: 0.25vw solid lightgray;
+    width: 9vw;
+    height: 4vw;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 30px;
+    left: 50%;
+    bottom: -2%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
+    font-weight: 100;
+    color: black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transform: translate(-50%, -50%);
+    position: fixed;
+    cursor: pointer;
+}
+
+.add-button:hover {
+    background-color: #b3ecff;
+    transition-duration: 0.3s;
+}
+
+.tags {
+    position: fixed;
+    width: 85%;
+    height: 25%;
+    left: 50%;
+    bottom: 13%;
+    transform: translate(-50%);
+}
+
+.tag {
+    width: 25px;
+    height: 25px;
+}
+
 /* Slider styles */
 .slider {
     position: fixed;
