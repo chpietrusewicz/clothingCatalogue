@@ -173,6 +173,15 @@
     height: 25px;
 }
 
+.clothing-div {
+    width: 70%;
+    height: 90%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 /* Slider styles */
 .slider {
     position: fixed;

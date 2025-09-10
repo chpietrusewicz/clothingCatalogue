@@ -25,7 +25,10 @@ function addClothingItem() {
     const clothingItem = {};
 
     const file = fileInput.files[0];
-    const tags = Array.from(checkboxes).map(cb => cb.value);
+    const tags = Array.from(checkboxes).map(cb => {
+        const label = document.querySelector(`label[for="${cb.id}"]`);
+        return label ? label.textContent.trim() : '';
+    });
     clothingItem.tags = tags;
 
     if (file) {
@@ -35,6 +38,12 @@ function addClothingItem() {
         };
         reader.readAsDataURL(file);
     }
+
+    clothingItem.color = getAverageColor();
+
+    const clothes = JSON.parse(localStorage.getItem('clothes')) || [];
+    clothes.push(clothingItem);
+    localStorage.setItem('clothes', JSON.stringify(clothes));
 
     console.log(clothingItem);
     clearInputs();
@@ -46,6 +55,8 @@ function clearInputs() {
     document.getElementById('output').src = '';
     const checkboxes = document.querySelectorAll('.tag:checked');
     checkboxes.forEach(cb => cb.checked = false);
+    //REMOVE THIS IF YOU WANT TO KEEP CLOTHES//
+    //localStorage.clear();
 }
 
 document.getElementById('avatar').addEventListener('change', previewImage);

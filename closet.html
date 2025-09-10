@@ -27,20 +27,31 @@
     <!-- Slider with Tabs -->
     <div class="slider">
         <!-- Back Arrow Button INSIDE the slider -->
-        <button class="back-arrow" onclick="window.location.href='index.html';" aria-label="Back to Home" style="position: static; margin: 16px auto 24px auto; display: block;">
-            <svg class="arrow-svg" viewBox="0 0 24 24" fill="none" stroke="slateblue" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="15 18 9 12 15 6"/>
+        <button class="back-arrow" onclick="window.location.href='index.html';" aria-label="Back to Home"
+            style="position: static; margin: 16px auto 24px auto; display: block;">
+            <svg class="arrow-svg" viewBox="0 0 24 24" fill="none" stroke="slateblue" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6" />
             </svg>
         </button>
-        <button class="slider-tab active" onclick="selectTab(this)">All</button>
-        <button class="slider-tab" onclick="selectTab(this)">Tees</button>
-        <button class="slider-tab" onclick="selectTab(this)">Long Sleeve</button>
-        <button class="slider-tab" onclick="selectTab(this)">Hoodies</button>
-        <button class="slider-tab" onclick="selectTab(this)">Jackets</button>
-        <button class="slider-tab" onclick="selectTab(this)">Shorts</button>
-        <button class="slider-tab" onclick="selectTab(this)">Pants</button>
-        <button class="slider-tab" onclick="selectTab(this)">Shoes</button>
-        <!-- Add more tabs as needed -->
+        <button class="slider-tab active" id="all-tab" onclick="selectTab(this)">All</button>
+        <button class="slider-tab" id="tees-tab" onclick="selectTab(this)">Tees</button>
+        <button class="slider-tab" id="long-sleeve-tab" onclick="selectTab(this)">Long Sleeve</button>
+        <button class="slider-tab" id="hoodie-tab" onclick="selectTab(this)">Hoodies</button>
+        <button class="slider-tab" id="jacket-tab" onclick="selectTab(this)">Jackets</button>
+        <button class="slider-tab" id="shorts-tab" onclick="selectTab(this)">Shorts</button>
+        <button class="slider-tab" id="pants-tab" onclick="selectTab(this)">Pants</button>
+        <button class="slider-tab" id="shoes-tab" onclick="selectTab(this)">Shoes</button>
+
+        <div class="clothing-div" id="all-tab-div" style="display: block; background-color: blue;">All Clothes</div>
+        <div class="clothing-div" id="tees-tab-div" style="display: none; background-color: red;">Tees</div>
+        <div class="clothing-div" id="long-sleeve-tab-div" style="display: none; background-color: green;">Long Sleeves</div>
+        <div class="clothing-div" id="hoodie-tab-div" style="display: none; background-color: yellow;">Hoodies</div>
+        <div class="clothing-div" id="jacket-tab-div" style="display: none; background-color: purple;">Jackets</div>
+        <div class="clothing-div" id="shorts-tab-div" style="display: none; background-color: orange;">Shorts</div>
+        <div class="clothing-div" id="pants-tab-div" style="display: none; background-color: pink;">Pants</div>
+        <div class="clothing-div" id="shoes-tab-div" style="display: none; background-color: brown;">Shoes</div>
+        
     </div>
     <!-- Plus Button in Top Right -->
     <div class="plus-container">
@@ -59,13 +70,28 @@
             <button class="close-button" onclick="closePopup()" aria-label="Close Popup">&times;</button>
             <input type="file" id="avatar" name="avatar" accept="image/*" />
             <br>
-            <img id="output" width="300" height="400" style="position: fixed; transform: translate(-50%, -50%); left: 50%; top: 32%;"/>
-            
+            <img id="output" width="300" height="400"
+                style="position: fixed; transform: translate(-50%, -50%); left: 50%; top: 32%;" />
+
             <div class="tags" id="tags">
+                <input type="checkbox" id="tee" class="tag" name="type">
+                <label for="tee" class="text" style="font-size: 25px;">Tees</label>
+                <input type="checkbox" id="long-sleeve" class="tag" name="type">
+                <label for="long-sleeve" class="text" style="font-size: 25px;">Long Sleeves</label>
+                <input type="checkbox" id="hoodie" class="tag" name="type">
+                <label for="hoodie" class="text" style="font-size: 25px;">Hoodies</label>
+                <input type="checkbox" id="jacket" class="tag" name="type">
+                <label for="jacket" class="text" style="font-size: 25px;">Jackets</label>
+                <input type="checkbox" id="shorts" class="tag" name="type">
+                <label for="shorts" class="text" style="font-size: 25px;">Shorts</label>
+                <input type="checkbox" id="pants" class="tag" name="type">
+                <label for="pants" class="text" style="font-size: 25px;">Pants</label>
+                <input type="checkbox" id="shoes" class="tag" name="type">
+                <label for="shoes" class="text" style="font-size: 25px;">Shoes</label>
                 <input type="checkbox" id="formal" class="tag" name="type">
                 <label for="formal" class="text" style="font-size: 25px;">Formal</label>
-                <input type="checkbox" id="exercise" class="tag" name="type">
-                <label for="exercise" class="text" style="font-size: 25px;">Exercise</label>
+                <input type="checkbox" id="athletic" class="tag" name="type">
+                <label for="athletic" class="text" style="font-size: 25px;">Athletic</label>
                 <input type="checkbox" id="casual" class="tag" name="type">
                 <label for="casual" class="text" style="font-size: 25px;">Casual</label>
                 <input type="checkbox" id="other" class="tag" name="type">
@@ -80,14 +106,6 @@
     <script src="functions.js"></script>
     <script src="addClothing.js"></script>
 
-    <script>
-        //Tab highlighting 
-        function selectTab(tab) {
-            document.querySelectorAll('.slider-tab').forEach(btn => btn.classList.remove('active'));
-            tab.classList.add('active');
-            //more for more tabs
-        }
-    </script>
 </body>
 
 </html>
